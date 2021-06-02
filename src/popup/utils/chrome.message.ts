@@ -1,5 +1,10 @@
 export function sendMessageToContentScript<T>(message: T): void {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        // let color = '#3aa757'
+        // chrome.tabs.executeScript(
+        //     // tabs[0].id,
+        //     {code: 'document.body.style.backgroundColor = "' + color + '";'});
+        //     console.log("green color");
         if (tabs?.[0]?.id) {
             chrome.tabs.sendMessage(tabs[0].id, message);
         }
@@ -8,7 +13,7 @@ export function sendMessageToContentScript<T>(message: T): void {
 
 export function sendMessageToContentScriptWithResponse<T, R>(message: T): Promise<R> {
     return new Promise<R>((res) => {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {          
             if (tabs?.[0]?.id) {
                 chrome.tabs.sendMessage(tabs[0].id, message, (response) => {
                     return res(response);
