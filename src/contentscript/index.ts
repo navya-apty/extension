@@ -1,13 +1,7 @@
+import unique from 'unique-selector';
+
 console.log('this is content script');
 
-<<<<<<< Updated upstream
-interface MessageWithResponse {
-    name: string;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function listenToMessages(): void {
-=======
 let g = window.location.href;
 var domData = {}
 var innerdata = {};
@@ -54,7 +48,6 @@ async function listenTomark(): void {
         }
 
     }
->>>>>>> Stashed changes
     chrome.runtime.onMessage.addListener((message) => {
         if(message.type === "marked"){
             getNewElements(1);
@@ -75,20 +68,6 @@ async function listenTomark(): void {
     });
 }
 
-<<<<<<< Updated upstream
-function listenAndRespond() {
-    chrome.runtime.onMessage.addListener((message: MessageWithResponse, _sender, sendResponse) => {
-        console.log('Got message from CS');
-        setTimeout(() => {
-            sendResponse(`Hello, ${message.name}`);
-        }, 1000);
-        return true; // this indicates that we will send response asynchronously
-    });
-}
-
-// listenToMessages();
-listenAndRespond();
-=======
 async function listenTosave(): void {
     var gamma2 = await listData();
     chrome.runtime.onMessage.addListener((message) => {
@@ -124,4 +103,3 @@ async function listenTosave(): void {
 listenTosave();
 
 listenTomark();
->>>>>>> Stashed changes
