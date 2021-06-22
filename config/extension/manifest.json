@@ -1,6 +1,6 @@
 {
-    "name": "browser-extension-starter-react",
-    "description": "browser-extension-starter-react",
+    "name": "browser-extension-for-salesforce",
+    "description": "browser-extension-for-salesforce",
     "version": "2.0",
     "manifest_version": 2,
     "permissions": [
@@ -11,7 +11,7 @@
         "activeTab"
     ],
     "browser_action": {
-        "default_title": "browser-extension-starter-react",
+        "default_title": "browser-extension-for-salesforce",
         "default_popup": "popup.html"
     },
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
@@ -24,7 +24,8 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                // "<all_urls>",
+                "https://letznav-dev-ed.lightning.force.com/*"
             ],
             "js": [
                 "contentscript.js"

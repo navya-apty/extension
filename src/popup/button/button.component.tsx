@@ -32,23 +32,7 @@ function ButtonComponent(): JSX.Element {
 
     return (
         <div>
-            <p>When You click on button, you will see alert in host page, this is with chrome messages</p>
-            <input
-                onChange={(e) => setState(e.target.value)}
-                value={state}
-                placeholder="enter message for alert"
-                type="text"
-                name="message"
-                id="message"
-            />
-            <button onClick={sendMessage}> sendMessage </button>
-            <button onClick={sendMessageWithResponse}>sendMessageWithResponse</button>
-            <p>Response is: {response}</p>
-            <button onClick={getDataFromBackgroundScript}>getResponseFromBackgroundScript</button>
-            <p>List from Background script </p>
-            {list.map((l) => (
-                <p key={l.title}>title is :{l.title}</p>
-            ))}
+            <h1>Hello</h1>
         </div>
     );
 }
